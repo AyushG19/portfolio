@@ -1,32 +1,35 @@
+import type { Root } from "hast"
 import { visit } from "unist-util-visit"
 
-import type { UnistNode, UnistTree } from "@/types/unist"
-import { addQueryParams } from "@/utils/url"
-
-export function rehypeAddQueryParams(params: Record<string, string>) {
-  return (tree: UnistTree) => {
-    visit(tree, (node: UnistNode) => {
+/**
+ * Rehype plugin that appends query parameters to all `<a>` href attributes.
+ *
+ * @example
+ * // In a rehype pipeline:
+ * [rehypeAddQueryParams, { utm_source: "mysite.com" }]
+ */
+export function rehypeAddQueryParams(
+  params: Record<string, string>
+): (tree: Root) => void {
+  return (tree: Root) => {
+    visit(tree, "element", (node) => {
       if (
-        node.type !== "element" ||
-        node?.tagName !== "a" ||
-        !node?.properties?.href
+        node.tagName !== "a" ||
+        !node.properties ||
+        typeof node.properties.href !== "string"
       ) {
         return
       }
 
-      const href = node.properties?.href as string | undefined
-
-      if (
-        !href ||
-        href.startsWith("/") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("tel:") ||
-        href.startsWith("#")
-      ) {
-        return
+      try {
+        const url = new URL(node.properties.href)
+        Object.entries(params).forEach(([key, value]) => {
+          url.searchParams.set(key, value)
+        })
+        node.properties.href = url.toString()
+      } catch {
+        // Not a valid absolute URL, skip
       }
-
-      node.properties.href = addQueryParams(href, params)
     })
   }
 }

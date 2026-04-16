@@ -3,10 +3,8 @@ import type { ProfilePage as PageSchema, WithContext } from "schema-dts"
 
 import { About } from "@/features/portfolio/components/about"
 import { Awards } from "@/features/portfolio/components/awards"
-import { Blog } from "@/features/portfolio/components/blog"
 import { Bookmarks } from "@/features/portfolio/components/bookmarks"
 import { Certifications } from "@/features/portfolio/components/certifications"
-import { Components } from "@/features/portfolio/components/components"
 import { Experiences } from "@/features/portfolio/components/experiences"
 import { GitHubContributions } from "@/features/portfolio/components/github-contributions"
 import { Overview } from "@/features/portfolio/components/overview"
@@ -48,22 +46,16 @@ export default function Page() {
         <About />
         <div className="flex h-2 w-full border-x border-line" />
 
-        <Testimonials />
-        <div className="flex h-2 w-full border-x border-line" />
+        {/* <Testimonials />
+        <div className="flex h-2 w-full border-x border-line" /> */}
 
         <GitHubContributions />
         <Separator />
 
-        <Sponsors />
-        <Separator />
+        {/* <Sponsors />
+        <Separator /> */}
 
         <TechStack />
-        <Separator />
-
-        <Components />
-        <Separator />
-
-        <Blog />
         <Separator />
 
         <Experiences />
@@ -72,14 +64,14 @@ export default function Page() {
         <Projects />
         <Separator />
 
-        <Awards />
+        {/* <Awards />
         <Separator />
 
         <Certifications />
         <Separator />
 
         <Bookmarks />
-        <Separator />
+        <Separator /> */}
       </div>
     </>
   )

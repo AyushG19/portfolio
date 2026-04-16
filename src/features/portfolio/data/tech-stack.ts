@@ -1,204 +1,159 @@
+import { tr } from "zod/v4/locales"
+
 import type { TechStack } from "../types/tech-stack"
 
 export const TECH_STACK: TechStack[] = [
+  {
+    key: "javascript",
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    categories: ["Language"],
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=PVRwpTTPMITk&format=png&color=000000",
+    darkIconUrl:
+      "https://assets.chanhdai.com/images/tech-stack-icons/javascript-dark.svg",
+  },
   {
     key: "typescript",
     title: "TypeScript",
     href: "https://www.typescriptlang.org/",
     categories: ["Language"],
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=HcQEdKCkXUs3&format=png&color=000000",
+    // darkIconUtl: "https://assets.chanhdai.com/images/tech-stack-icons/typescript-dark.svg",
   },
-  {
-    key: "js",
-    title: "JavaScript",
-    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    categories: ["Language"],
-  },
-  {
-    key: "python",
-    title: "Python",
-    href: "https://www.python.org/",
-    categories: ["Language"],
-  },
-  // {
-  //   key: "php",
-  //   title: "PHP",
-  //   href: "https://www.php.net/",
-  //   categories: ["Language"],
-  // },
   {
     key: "java",
     title: "Java",
     href: "https://www.java.com/",
     categories: ["Language"],
+    iconUrl: "https://assets.chanhdai.com/images/tech-stack-icons/java.svg",
+    darkIconUrl:
+      "https://assets.chanhdai.com/images/tech-stack-icons/java-dark.svg",
   },
   {
     key: "nodejs",
     title: "Node.js",
     href: "https://nodejs.org/",
     categories: ["Runtime Environment"],
+    iconUrl:
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjkyIiB2aWV3Qm94PSIwIDAgMjU2IDI5MiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJTVkcxQ2hLUmR5TSIgeDE9IjY4LjE4OCUiIHgyPSIyNy44MjMlIiB5MT0iMTcuNDg3JSIgeTI9Ijg5Ljc1NSUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0MTg3M2YiLz48c3RvcCBvZmZzZXQ9IjMyLjg4JSIgc3RvcC1jb2xvcj0iIzQxOGIzZCIvPjxzdG9wIG9mZnNldD0iNjMuNTIlIiBzdG9wLWNvbG9yPSIjNDE5NjM3Ii8+PHN0b3Agb2Zmc2V0PSI5My4xOSUiIHN0b3AtY29sb3I9IiMzZmE5MmQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzZmFlMmEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHYU1KdGtjeEUiIHgxPSI0My4yNzclIiB4Mj0iMTU5LjI0NSUiIHkxPSI1NS4xNjklIiB5Mj0iLTE4LjMwNiUiPjxzdG9wIG9mZnNldD0iMTMuNzYlIiBzdG9wLWNvbG9yPSIjNDE4NzNmIi8+PHN0b3Agb2Zmc2V0PSI0MC4zMiUiIHN0b3AtY29sb3I9IiM1NGEwNDQiLz48c3RvcCBvZmZzZXQ9IjcxLjM2JSIgc3RvcC1jb2xvcj0iIzY2Yjg0OCIvPjxzdG9wIG9mZnNldD0iOTAuODElIiBzdG9wLWNvbG9yPSIjNmNjMDRhIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9IlNWR1BxYkdqYkd1IiB4MT0iLTQuMzg5JSIgeDI9IjEwMS40OTklIiB5MT0iNDkuOTk3JSIgeTI9IjQ5Ljk5NyUiPjxzdG9wIG9mZnNldD0iOS4xOTIlIiBzdG9wLWNvbG9yPSIjNmNjMDRhIi8+PHN0b3Agb2Zmc2V0PSIyOC42NCUiIHN0b3AtY29sb3I9IiM2NmI4NDgiLz48c3RvcCBvZmZzZXQ9IjU5LjY4JSIgc3RvcC1jb2xvcj0iIzU0YTA0NCIvPjxzdG9wIG9mZnNldD0iODYuMjQlIiBzdG9wLWNvbG9yPSIjNDE4NzNmIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBpZD0iU1ZHb1ZldFZjUUEiIGQ9Ik0xMzQuOTIzIDEuODMyYy00LjM0NC0yLjQ0My05LjUwMi0yLjQ0My0xMy44NDYgMEw2Ljc4NyA2Ny44MDFDMi40NDMgNzAuMjQ0IDAgNzQuODU5IDAgNzkuNzQ1djEzMi4yMDhjMCA0Ljg4NyAyLjcxNSA5LjUwMiA2Ljc4NyAxMS45NDVsMTE0LjI5IDY1Ljk2OGM0LjM0NCAyLjQ0NCA5LjUwMiAyLjQ0NCAxMy44NDYgMGwxMTQuMjktNjUuOTY4YzQuMzQ0LTIuNDQzIDYuNzg3LTcuMDU4IDYuNzg3LTExLjk0NVY3OS43NDVjMC00Ljg4Ni0yLjcxNS05LjUwMS02Ljc4Ny0xMS45NDR6Ii8+PC9kZWZzPjxwYXRoIGZpbGw9InVybCgjU1ZHMUNoS1JkeU0pIiBkPSJNMTM0LjkyMyAxLjgzMmMtNC4zNDQtMi40NDMtOS41MDItMi40NDMtMTMuODQ2IDBMNi43ODcgNjcuODAxQzIuNDQzIDcwLjI0NCAwIDc0Ljg1OSAwIDc5Ljc0NXYxMzIuMjA4YzAgNC44ODcgMi43MTUgOS41MDIgNi43ODcgMTEuOTQ1bDExNC4yOSA2NS45NjhjNC4zNDQgMi40NDQgOS41MDIgMi40NDQgMTMuODQ2IDBsMTE0LjI5LTY1Ljk2OGM0LjM0NC0yLjQ0MyA2Ljc4Ny03LjA1OCA2Ljc4Ny0xMS45NDVWNzkuNzQ1YzAtNC44ODYtMi43MTUtOS41MDEtNi43ODctMTEuOTQ0eiIvPjxtYXNrIGlkPSJTVkdwOGNHZmNNViIgZmlsbD0iI2ZmZiI+PHVzZSBocmVmPSIjU1ZHb1ZldFZjUUEiLz48L21hc2s+PHBhdGggZmlsbD0idXJsKCNTVkdhTUp0a2N4RSkiIGQ9Ik0yNDkuNDg1IDY3LjhMMTM0LjY1IDEuODMzYy0xLjA4Ni0uNTQyLTIuNDQzLTEuMDg1LTMuNTI5LTEuMzU3TDIuNDQzIDIyMC45MTJjMS4wODYgMS4zNTcgMi40NDQgMi40NDMgMy44IDMuMjU4bDExNC44MzQgNjUuOTY4YzMuMjU4IDEuOSA3LjA1OSAyLjQ0MyAxMC41ODggMS4zNTdMMjUyLjQ3IDcwLjUxNWMtLjgxNS0xLjA4Ni0xLjktMS45LTIuOTg2LTIuNzE0IiBtYXNrPSJ1cmwoI1NWR3A4Y0dmY01WKSIvPjxwYXRoIGZpbGw9InVybCgjU1ZHUHFiR2piR3UpIiBkPSJNMjQ5Ljc1NiAyMjMuODk4YzMuMjU4LTEuOSA1LjcwMS01LjE1OCA2Ljc4Ny04LjY4N0wxMzAuNTc5LjIwNGMtMy4yNTgtLjU0My02Ljc4Ny0uMjcyLTkuNzczIDEuNjI4TDYuNzg2IDY3LjUzbDEyMi45NzkgMjI0LjIzOGMxLjYyOC0uMjcyIDMuNTI5LS44MTUgNS4xNTgtMS42M3oiIG1hc2s9InVybCgjU1ZHcDhjR2ZjTVYpIi8+PC9zdmc+",
+    darkIconUrl:
+      "https://assets.chanhdai.com/images/tech-stack-icons/nodejs-dark.svg",
   },
   {
-    key: "bun",
-    title: "Bun",
-    href: "https://bun.sh/",
-    categories: ["Runtime Environment"],
+    key: "express",
+    title: "Express.js",
+    href: "https://expressjs.com/",
+    categories: ["Framework"],
+    theme: true,
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=000000",
+    darkIconUrl:
+      "https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=FFFFFF",
   },
   {
     key: "react",
     title: "React",
     href: "https://react.dev/",
     categories: ["Library", "UI Library"],
+    iconUrl:
+      "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png",
   },
   {
-    key: "nextjs2",
+    key: "nextjs",
     title: "Next.js",
     href: "https://nextjs.org/",
     categories: ["Framework"],
     theme: true,
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=gwR0hbBi5JeZ&format=png&color=000000",
+    darkIconUrl:
+      "https://img.icons8.com/?size=100&id=gwR0hbBi5JeZ&format=png&color=ffffff",
   },
   {
     key: "tailwindcss",
     title: "Tailwind CSS",
     href: "https://tailwindcss.com/",
     categories: ["Framework"],
-  },
-  {
-    key: "shadcn-ui",
-    title: "shadcn/ui",
-    href: "https://ui.shadcn.com/",
-    categories: ["Library", "Component Library"],
-    theme: true,
-  },
-  {
-    key: "radixui",
-    title: "Radix UI",
-    href: "https://www.radix-ui.com/",
-    categories: ["Library", "Component Library"],
-    theme: true,
-  },
-  {
-    key: "base-ui",
-    title: "Base UI",
-    href: "https://base-ui.com/",
-    categories: ["Library", "Component Library"],
-    theme: true,
-  },
-  {
-    key: "motion",
-    title: "Motion",
-    href: "https://motion.dev/",
-    categories: ["Library", "Animation"],
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000",
   },
   {
     key: "tanstack",
-    title: "TanStack",
-    href: "https://tanstack.com/",
+    title: "Tanstack Query",
+    href: "https://tanstack.com/query/latest",
     categories: ["Library"],
-    theme: true,
+    iconUrl:
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjMwIiB2aWV3Qm94PSIwIDAgMjU2IDIzMCI+PHBhdGggZmlsbD0iIzAwNDM1YiIgZD0ibTE1Ny45OCAxNDIuNDg3bC00LjkxIDguNTI3YTguMjkgOC4yOSAwIDAgMS03LjE4MiA0LjE1MUgxMDguMjdhOC4yOSA4LjI5IDAgMCAxLTcuMTgyLTQuMTUxbC00LjkxMS04LjUyN3ptMTMuNzQ3LTIzLjg3bC04LjY1OCAxNS4wMzRoLTcxLjk4bC04LjY1OC0xNS4wMzR6bS04LjM0LTIzLjM0Mmw4LjM1NCAxNC41MDZIODIuNDE3bDguMzU0LTE0LjUwNnptLTE3LjUtMjIuMDY2YTguMjkgOC4yOSAwIDAgMSA3LjE4MyA0LjE1MWw1LjIyOCA5LjA3OUg5NS44Nmw1LjIyOS05LjA3OWE4LjI5IDguMjkgMCAwIDEgNy4xODItNC4xNTF6Ii8+PHBhdGggZmlsbD0iIzAwMmIzYiIgZD0iTTUzLjUyMyA2OS4yNTJjLTQuMTY3LTIwLjIwNi01LjA2Mi0zNS43MDQtMi4zNjgtNDYuOTU3YzEuNjAyLTYuNjkzIDQuNTMtMTIuMTUzIDguOTg0LTE2LjA5M2M0LjcwMi00LjE1OSAxMC42NDYtNi4yIDE3LjMyNi02LjJjMTEuMDE4IDAgMjIuNjAyIDUuMDI1IDM0Ljk4IDE0LjU3YzUuMDUgMy44OTQgMTAuMjkgOC41ODcgMTUuNzMyIDE0LjA4MmMuNDM0LS41NTcuOTIzLTEuMDgzIDEuNDY5LTEuNTdjMTUuMzg2LTEzLjcxIDI4LjM0LTIyLjIzIDM5LjQyLTI1LjUxNGM2LjU4OC0xLjk1NCAxMi43NzMtMi4xNCAxOC40MDUtLjI0NGM1Ljk0NiAyIDEwLjY4MyA2LjEzNyAxNC4wMjYgMTEuOTNjNS41MTYgOS41NjEgNi45NyAyMi4xMjQgNC45MTQgMzcuNjM3Yy0uODM4IDYuMzIzLTIuMjcxIDEzLjIxLTQuMjk2IDIwLjY3M2MuNzY0LjA5MiAxLjUzLjI2MiAyLjI4OC41MTNjMTkuNTIxIDYuNDcgMzMuMzQ1IDEzLjQyNiA0MS43MTQgMjEuMzc3YzQuOTggNC43MyA4LjIzMSA5Ljk5NiA5LjQwNyAxNS44MjZjMS4yNCA2LjE1My4wMyAxMi4zMjQtMy4zMDggMTguMTEzYy01LjUwNiA5LjU0OC0xNS42MyAxNy4wNzctMzAuMDUyIDIzLjA0MWMtNS43OSAyLjM5NS0xMi4zNDMgNC41NjQtMTkuNjY0IDYuNTE1Yy4zMzQuNzU0LjU5NCAxLjU1NS43NjcgMi4zOTVjNC4xNjcgMjAuMjA2IDUuMDYxIDM1LjcwNCAyLjM2OCA0Ni45NTdjLTEuNjAyIDYuNjkzLTQuNTMxIDEyLjE1My04Ljk4NSAxNi4wOTNjLTQuNzAxIDQuMTU5LTEwLjY0NiA2LjItMTcuMzI1IDYuMmMtMTEuMDE5IDAtMjIuNjAyLTUuMDI1LTM0Ljk4LTE0LjU3Yy01LjEwNC0zLjkzNi0xMC40MDItOC42ODctMTUuOTA3LTE0LjI1OGExMS43IDExLjcgMCAwIDEtMi4wODQgMi40NDJjLTE1LjM4NiAxMy43MTItMjguMzQgMjIuMjMtMzkuNDIgMjUuNTE1Yy02LjU4OCAxLjk1NC0xMi43NzMgMi4xNC0xOC40MDUuMjQ0Yy01Ljk0Ni0yLTEwLjY4My02LjEzNy0xNC4wMjYtMTEuOTNjLTUuNTE2LTkuNTYxLTYuOTctMjIuMTI0LTQuOTE0LTM3LjYzN2MuODY5LTYuNTUxIDIuMzc2LTEzLjcwOSA0LjUxOC0yMS40ODVhMTEuNyAxMS43IDAgMCAxLTIuNTEtLjUzN2MtMTkuNTIxLTYuNDctMzMuMzQ1LTEzLjQyNi00MS43MTQtMjEuMzc3Yy00Ljk4LTQuNzMtOC4yMzEtOS45OTYtOS40MDctMTUuODI2Yy0xLjI0LTYuMTUzLS4wMy0xMi4zMjUgMy4zMDgtMTguMTE0YzUuNTA2LTkuNTQ3IDE1LjYzLTE3LjA3NyAzMC4wNTItMjMuMDRjNS45NjMtMi40NjcgMTIuNzM0LTQuNjkzIDIwLjMyLTYuNjg5YTEyIDEyIDAgMCAxLS42MzMtMi4wODIiLz48cGF0aCBmaWxsPSIjZmY0MTU0IiBkPSJNMTg5LjY0NyAxNjEuMzMzYTMuNjg0IDMuNjg0IDAgMCAxIDQuMjM1IDIuODFsLjAyMy4xMTJsLjIwNyAxLjA3NXExMC4wNjUgNTIuOTE1LTE0LjE4IDUyLjkxNXEtMjMuNzIgMC02MC4zOTItNDUuMTUzYTMuNjg0IDMuNjg0IDAgMCAxIDIuNzc3LTYuMDA1aC4xMTRsMS4yODguMDA5cTE1LjQzMi4wODQgMzAuMDA0LTEuMDc2cTE3LjItMS4zNyAzNS45MjQtNC42ODdNNzguNjQ2IDEzNC42NjdsLjA2Mi4xMDVsLjY0NiAxLjEyN3E3Ljc2NSAxMy41IDE2LjE4IDI1LjYyN3E5LjkxMiAxNC4yOCAyMi4yOSAyOC45MTRhMy42ODQgMy42ODQgMCAwIDEtLjMwOSA1LjA4MmwtLjA5My4wODNsLS44My43MTVxLTQwLjk2IDM1LjA5Ni01My4yNDQgMTQuMDEycS0xMi4wMjUtMjAuNjM2IDguNzE5LTc1LjA0N2EzLjY4MyAzLjY4MyAwIDAgMSA2LjU3OS0uNjE4bTEyNC44NTctNTIuMDU0bC4xMTIuMDM3bDEuMDI4LjM1NHE1MC41NTcgMTcuNTg4IDM4LjQxNiAzOC42NTVxLTExLjg3NCAyMC42MDUtNjkuMDQxIDMwLjAwNGEzLjY4MyAzLjY4MyAwIDAgMS0zLjc3My01LjUwMXE4LjE4OC0xMy45MjggMTQuNzQ5LTI3LjcxN3E3LjQ0LTE1LjYzOCAxMy45NjUtMzMuNTdhMy42ODQgMy42ODQgMCAwIDEgNC40MzItMi4yOTV6TTg0LjQ0NiA3Ni43MWEzLjY4MyAzLjY4MyAwIDAgMSAxLjMxIDUuMDQycS04LjE5IDEzLjkyNy0xNC43NSAyNy43MTdxLTcuNDQgMTUuNjM3LTEzLjk2NSAzMy41N2EzLjY4NCAzLjY4NCAwIDAgMS00LjU0NCAyLjI2MmwtLjExMi0uMDM3bC0xLjAyOC0uMzU1US44IDEyNy4zMjIgMTIuOTQxIDEwNi4yNTVRMjQuODE1IDg1LjY1IDgxLjk4MiA3Ni4yNWMuODUtLjE0IDEuNzIyLjAyMiAyLjQ2NC40NTltMTA4LjIwNi01Ny43NDhxMTIuMDI1IDIwLjYzNy04LjcxOSA3NS4wNDhhMy42ODMgMy42ODMgMCAwIDEtNi41NzkuNjE4bC0uMDYyLS4xMDVsLS42NDYtMS4xMjdxLTcuNzY1LTEzLjUtMTYuMTgtMjUuNjI3cS05LjkxMi0xNC4yOC0yMi4yOS0yOC45MTRhMy42ODQgMy42ODQgMCAwIDEgLjMwOS01LjA4MmwuMDkzLS4wODNsLjgzLS43MTVxNDAuOTYtMzUuMDk1IDUzLjI0NC0xNC4wMTNNNzcuNDUgMTAuNTlxMjMuNzIxIDAgNjAuMzkyIDQ1LjE1MmEzLjY4NCAzLjY4NCAwIDAgMS0yLjc3NyA2LjAwNWgtLjExNGwtMS4yODgtLjAwOHEtMTUuNDMxLS4wODQtMzAuMDAzIDEuMDc2cS0xNy4yMDIgMS4zNy0zNS45MjUgNC42ODdhMy42ODQgMy42ODQgMCAwIDEtNC4yMzQtMi44MWwtLjAyNC0uMTEzbC0uMjA3LTEuMDc0UTUzLjIwNCAxMC41OSA3Ny40NSAxMC41OSIvPjxwYXRoIGZpbGw9IiNmZmQ5NGMiIGQ9Ik0xMTEuMjk1IDczLjY3aDMxLjU3NmExMi44OSAxMi44OSAwIDAgMSAxMS4xODEgNi40NzVsMTUuODU1IDI3LjYyNmExMi44OSAxMi44OSAwIDAgMSAwIDEyLjgzNGwtMTUuODU1IDI3LjYyNmExMi44OSAxMi44OSAwIDAgMS0xMS4xODEgNi40NzVoLTMxLjU3NmMtNC42MTggMC04Ljg4My0yLjQ3LTExLjE4Mi02LjQ3NUw4NC4yNiAxMjAuNjA1YTEyLjg5IDEyLjg5IDAgMCAxIDAtMTIuODM0bDE1Ljg1NC0yNy42MjZhMTIuODkgMTIuODkgMCAwIDEgMTEuMTgyLTYuNDc1bTI2Ljc2MyA4LjMzOGM0LjYyIDAgOC44ODggMi40NzMgMTEuMTg1IDYuNDgxbDExLjA1NiAxOS4yODhhMTIuODkgMTIuODkgMCAwIDEgMCAxMi44MjJsLTExLjA1NiAxOS4yODhhMTIuODkgMTIuODkgMCAwIDEtMTEuMTg1IDYuNDhoLTIxLjk1Yy00LjYyIDAtOC44ODgtMi40NzItMTEuMTg1LTYuNDhsLTExLjA1Ni0xOS4yODhhMTIuODkgMTIuODkgMCAwIDEgMC0xMi44MjJsMTEuMDU2LTE5LjI4OGExMi44OSAxMi44OSAwIDAgMSAxMS4xODQtNi40OHptLTUuMTg3IDkuMTJoLTExLjU3NmExMi44OSAxMi44OSAwIDAgMC0xMS4xNzkgNi40N2wtNS44NDIgMTAuMTY3YTEyLjg5IDEyLjg5IDAgMCAwIDAgMTIuODQ2bDUuODQyIDEwLjE2OGExMi44OSAxMi44OSAwIDAgMCAxMS4xNzkgNi40N2gxMS41NzZjNC42MTYgMCA4Ljg4LTIuNDY4IDExLjE3OS02LjQ3bDUuODQyLTEwLjE2OGExMi44OSAxMi44OSAwIDAgMCAwLTEyLjg0NmwtNS44NDItMTAuMTY4YTEyLjg5IDEyLjg5IDAgMCAwLTExLjE3OS02LjQ3bS00Ljk5NCA4LjcyOWM0LjYxMiAwIDguODczIDIuNDY0IDExLjE3MyA2LjQ2bC44MjkgMS40NGExMi44OSAxMi44OSAwIDAgMSAwIDEyLjg2MmwtLjgyOSAxLjQ0YTEyLjg5IDEyLjg5IDAgMCAxLTExLjE3MyA2LjQ2aC0xLjU4OGExMi44OSAxMi44OSAwIDAgMS0xMS4xNzMtNi40NmwtLjgyOS0xLjQ0YTEyLjg5IDEyLjg5IDAgMCAxIDAtMTIuODYybC44MjktMS40NGExMi44OSAxMi44OSAwIDAgMSAxMS4xNzMtNi40NnptLS43OTIgOC41OTlhNS43NCA1Ljc0IDAgMCAwLTQuOTcgMi44NjZhNS43MyA1LjczIDAgMCAwIDAgNS43MzJhNS43MzggNS43MzggMCAwIDAgOS45MzcgMGE1LjczIDUuNzMgMCAwIDAgMC01LjczMmE1Ljc0IDUuNzQgMCAwIDAtNC45NjctMi44NjZtLTQ2LjUwOSA1LjczMmgxMC4zMiIvPjwvc3ZnPg==",
   },
   {
-    key: "mobx-state-tree",
-    title: "MobX-State-Tree",
-    href: "https://mobx-state-tree.js.org/",
-    categories: ["State Management"],
-  },
-  {
-    key: "redux",
-    title: "Redux",
-    href: "https://redux.js.org/",
-    categories: ["State Management"],
-  },
-  {
-    key: "antd",
-    title: "Ant Design",
-    href: "https://ant.design/",
-    categories: ["Library", "UI Library"],
-  },
-  {
-    key: "react-router",
-    title: "React Router",
-    href: "https://reactrouter.com/",
-    categories: ["Library", "Navigation"],
-    theme: true,
-  },
-  {
-    key: "react-navigation",
-    title: "React Navigation",
-    href: "https://reactnavigation.org/",
-    categories: ["Library", "Navigation"],
-  },
-  // {
-  //   key: "loopback",
-  //   title: "LoopBack",
-  //   href: "https://loopback.io/",
-  //   categories: ["Framework"],
-  // },
-  {
-    key: "laravel",
-    title: "Laravel",
-    href: "https://laravel.com/",
-    categories: ["Framework"],
-  },
-  {
-    key: "git",
-    title: "Git",
-    href: "https://git-scm.com/",
-    categories: ["Version Control"],
-  },
-  {
-    key: "docker",
-    title: "Docker",
-    href: "https://www.docker.com/",
-    categories: ["Containerization"],
-  },
-  {
-    key: "mysql",
-    title: "MySQL",
-    href: "https://www.mysql.com/",
+    key: "postgresql",
+    title: "PostgreSQL",
+    href: "https://www.postgresql.org/",
     categories: ["Database"],
+    theme: true,
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=Pv4IGT0TSpt8&format=png&color=000000",
+    darkIconUrl:
+      "https://img.icons8.com/?size=100&id=Pv4IGT0TSpt8&format=png&color=FFFFFF",
   },
   {
     key: "mongodb",
     title: "MongoDB",
     href: "https://www.mongodb.com/",
     categories: ["Database"],
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=8rKdRqZFLurS&format=png&color=000000",
   },
   {
     key: "redis",
     title: "Redis",
     href: "https://redis.io/",
     categories: ["Database"],
+    iconUrl:
+      "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-redis-an-in-memory-data-structure-project-implementing-a-distributed-logo-shadow-tal-revivo.png",
   },
   {
-    key: "figma",
-    title: "Figma",
-    href: "https://www.figma.com/",
-    categories: ["Tools", "Design"],
-  },
-  {
-    key: "ps",
-    title: "Adobe Photoshop",
-    href: "https://www.adobe.com/vn_en/products/photoshop.html",
-    categories: ["Tools", "Design"],
-  },
-  {
-    key: "claude",
-    title: "Claude",
-    href: "https://claude.ai/",
-    categories: ["Tools", "AI"],
-  },
-  {
-    key: "cursor",
-    title: "Cursor",
-    href: "https://cursor.com/",
-    categories: ["Tools", "AI"],
+    key: "prisma",
+    title: "Prisma",
+    href: "https://www.prisma.io/",
+    categories: ["Tools"],
     theme: true,
+    iconUrl:
+      "https://img.icons8.com/?size=100&id=aqb9SdV9P8oC&format=png&color=000000",
+    darkIconUrl:
+      "https://img.icons8.com/?size=100&id=aqb9SdV9P8oC&format=png&color=FFFFFF",
   },
   {
-    key: "chatgpt",
-    title: "ChatGPT",
-    href: "https://chatgpt.com/",
-    categories: ["Tools", "AI"],
-    theme: true,
+    key: "docker",
+    title: "Docker",
+    href: "https://www.docker.com/",
+    categories: ["Containerization"],
+    iconUrl:
+      "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/96/external-docker-a-set-of-coupled-software-as-a-service-logo-shadow-tal-revivo.png",
+  },
+  {
+    key: "grammy",
+    title: "Grammy",
+    href: "https://grammy.dev/",
+    categories: ["Framework"],
+    iconUrl: "./gammY.svg",
+  },
+  {
+    key: "turborepo",
+    title: "Turborepo",
+    href: "https://turbo.build/",
+    categories: ["Tools"],
+    iconUrl:
+      "data:image/png;base64,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",
+  },
+  {
+    key: "bull-mq",
+    title: "BullMQ",
+    href: "https://bullmq.io/",
+    categories: ["Library"],
+    iconUrl:
+      "https://docs.bullmq.io/~gitbook/image?url=https%3A%2F%2F1340146492-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-LUuDmt_xXMfG66Rn1GA%252Ficon%252FHOq80FSJicAlE4bVptC9%252Fbull.png%3Falt%3Dmedia%26token%3D10a2ba71-db1f-4d5c-8787-3dbedc8dd3ce&width=32&dpr=1&quality=100&sign=929d1d52&sv=2",
   },
 ]

@@ -10,18 +10,14 @@ import {
   CircleCheckBigIcon,
   CornerDownLeftIcon,
   DownloadIcon,
-  FileTextIcon,
   LayersIcon,
   MoonStarIcon,
   MousePointer2Icon,
-  RssIcon,
   SunMediumIcon,
   TextInitialIcon,
-  TriangleDashedIcon,
-  TypeIcon,
 } from "lucide-react"
 import { useTheme } from "next-themes"
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { useCallback, useState } from "react"
 import { useHotkeys } from "react-hotkeys-hook"
 import { toast } from "sonner"
 
@@ -34,15 +30,13 @@ import {
   CommandList,
   CommandShortcut,
 } from "@/components/ui/command"
-import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 import { useDuckFollowerVisibility } from "@/hooks/use-duck-follower-visibility"
 import { trackEvent } from "@/lib/events"
 import { copyToClipboardWithEvent } from "@/utils/copy"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
-import { ComponentIcon, Icons } from "./icons"
+import { AyushMark } from "./ayush-mark"
+import { Icons } from "./icons"
 import { Button } from "./ui/button"
 import { Kbd, KbdGroup } from "./ui/kbd"
 import { Separator } from "./ui/separator"
@@ -62,38 +56,8 @@ const MENU_LINKS: CommandLinkItem[] = [
   {
     title: "Home",
     href: "/",
-    icon: <ChanhDaiMark />,
+    icon: <AyushMark />,
     shortcut: "GH",
-  },
-  {
-    title: "Components",
-    href: "/components",
-    icon: <Icons.react />,
-    shortcut: "GC",
-  },
-  {
-    title: "Blocks",
-    href: "/blocks",
-    icon: <Icons.gridView />,
-    shortcut: "GB",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: <Icons.news />,
-    shortcut: "GL",
-  },
-  {
-    title: "Sponsors",
-    href: "/sponsors",
-    icon: <Icons.favourite />,
-    shortcut: "GS",
-  },
-  {
-    title: "Wall of Love",
-    href: "/wall-of-love",
-    icon: <Icons.bookHeart />,
-    shortcut: "GW",
   },
 ]
 
@@ -118,21 +82,21 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     href: "/#projects",
     icon: <BoxIcon />,
   },
-  {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: <AwardIcon />,
-  },
-  {
-    title: "Certifications",
-    href: "/#certs",
-    icon: <CircleCheckBigIcon />,
-  },
-  {
-    title: "Bookmarks",
-    href: "/#bookmarks",
-    icon: <BookmarkIcon />,
-  },
+  // {
+  //   title: "Honors & Awards",
+  //   href: "/#awards",
+  //   icon: <AwardIcon />,
+  // },
+  // {
+  //   title: "Certifications",
+  //   href: "/#certs",
+  //   icon: <CircleCheckBigIcon />,
+  // },
+  // {
+  //   title: "Bookmarks",
+  //   href: "/#bookmarks",
+  //   icon: <BookmarkIcon />,
+  // },
   {
     title: "Download vCard",
     href: "/vcard",
@@ -147,38 +111,14 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   openInNewTab: true,
 }))
 
-const OTHER_LINK_ITEMS: CommandLinkItem[] = [
-  {
-    title: "llms.txt",
-    href: "/llms.txt",
-    icon: <FileTextIcon />,
-    openInNewTab: true,
-  },
-  {
-    title: "RSS Feed",
-    href: "/rss",
-    icon: <RssIcon />,
-    openInNewTab: true,
-  },
-]
-
-type BlockItem = {
-  name: string
-  description: string
-}
-
 export function CommandMenu({
-  docs,
-  blocks,
   enabledHotkeys = false,
 }: {
-  docs: DocPreview[]
-  blocks: BlockItem[]
   enabledHotkeys?: boolean
 }) {
   const router = useRouter()
 
-  const { setTheme, resolvedTheme } = useTheme()
+  const { setTheme } = useTheme()
 
   const [open, setOpen] = useState(false)
 
@@ -268,33 +208,6 @@ export function CommandMenu({
     })
   }, [setIsDuckFollowerVisible])
 
-  const { componentLinks, blogLinks } = useMemo(
-    () => ({
-      componentLinks: docs
-        .filter((doc) => doc.category === "components")
-        .sort((a, b) =>
-          a.title.localeCompare(b.title, "en", {
-            sensitivity: "base",
-          })
-        )
-        .map(docToCommandLinkItem),
-      blogLinks: docs
-        .filter((doc) => doc.category !== "components")
-        .map(docToCommandLinkItem),
-    }),
-    [docs]
-  )
-
-  const blockLinks = useMemo(
-    () =>
-      blocks.map((block) => ({
-        title: block.name,
-        href: `/blocks#${block.name}`,
-        keywords: ["block"],
-      })),
-    [blocks]
-  )
-
   return (
     <>
       <CommandMenuTrigger
@@ -328,71 +241,10 @@ export function CommandMenu({
           />
 
           <CommandLinkGroup
-            heading="Components"
-            links={componentLinks}
-            fallbackIcon={<Icons.react />}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
-            heading="Blocks"
-            links={blockLinks}
-            fallbackIcon={<Icons.gridView />}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
-            heading="Blog"
-            links={blogLinks}
-            fallbackIcon={<Icons.news />}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandLinkGroup
             heading="Social Links"
             links={SOCIAL_LINK_ITEMS}
             onLinkSelect={handleOpenLink}
           />
-
-          <CommandGroup heading="Brand Assets">
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getMarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Mark as SVG copied"
-                )
-              }}
-            >
-              <ChanhDaiMark />
-              Copy Mark as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => {
-                handleCopyText(
-                  getWordmarkSVG(resolvedTheme === "light" ? "#000" : "#fff"),
-                  "Logotype as SVG copied"
-                )
-              }}
-            >
-              <TypeIcon />
-              Copy Logotype as SVG
-            </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
-          </CommandGroup>
 
           <CommandGroup heading="Theme">
             <CommandItem
@@ -424,12 +276,6 @@ export function CommandMenu({
               Toggle Duck Follower
             </CommandItem>
           </CommandGroup>
-
-          <CommandLinkGroup
-            heading="Other"
-            links={OTHER_LINK_ITEMS}
-            onLinkSelect={handleOpenLink}
-          />
         </CommandList>
 
         <CommandMenuFooter />
@@ -466,22 +312,6 @@ function CommandMenuTrigger({ ...props }: React.ComponentProps<typeof Button>) {
 
 function CommandMenuInput() {
   const [searchValue, setSearchValue] = useState("")
-
-  useEffect(() => {
-    if (searchValue.length >= 2) {
-      const timeoutId = setTimeout(() => {
-        trackEvent({
-          name: "command_menu_search",
-          properties: {
-            query: searchValue,
-            query_length: searchValue.length,
-          },
-        })
-      }, 500)
-
-      return () => clearTimeout(timeoutId)
-    }
-  }, [searchValue])
 
   return (
     <CommandInput
@@ -556,16 +386,6 @@ function buildCommandMetaMap() {
   commandMetaMap.set("Dark", { commandKind: "command" })
   commandMetaMap.set("Auto", { commandKind: "command" })
 
-  commandMetaMap.set("Copy Mark as SVG", {
-    commandKind: "command",
-  })
-  commandMetaMap.set("Copy Logotype as SVG", {
-    commandKind: "command",
-  })
-  commandMetaMap.set("Download Brand Assets", {
-    commandKind: "command",
-  })
-
   SOCIAL_LINK_ITEMS.forEach((item) => {
     commandMetaMap.set(item.title, {
       commandKind: "link",
@@ -593,7 +413,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl border-t px-4 text-xs font-medium">
-        <ChanhDaiMark className="size-6 text-muted-foreground" />
+        <AyushMark className="size-6 text-muted-foreground" />
 
         <div className="flex shrink-0 items-center gap-2 max-sm:hidden">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
@@ -610,15 +430,4 @@ function CommandMenuFooter() {
       </div>
     </>
   )
-}
-
-function docToCommandLinkItem(doc: DocPreview): CommandLinkItem {
-  const isComponent = doc.category === "components"
-
-  return {
-    title: doc.title,
-    href: isComponent ? `/components/${doc.slug}` : `/blog/${doc.slug}`,
-    keywords: isComponent ? ["component"] : undefined,
-    icon: isComponent ? <ComponentIcon variant={doc.slug} /> : undefined,
-  }
 }

@@ -1,66 +1,35 @@
 import type { User } from "@/features/portfolio/types/user"
 
 export const USER: User = {
-  firstName: "Ayush Gupta",
-  lastName: "Nguyễn",
+  firstName: "Ayush",
+  lastName: "Gupta",
   displayName: "Ayush Gupta",
-  username: "ayush",
+  username: "ayushG19",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "Information Technology Student | Developer",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
-    "Open Source Contributor",
+    "Information Technology Student",
+    "Passionate Web Developer",
+    "Creative Problem Solver",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://ayushG.com",
-  jobTitle: "Design Engineer",
-  jobs: [
-    {
-      title: "Design Engineer",
-      company: "shadcncraft",
-      website: "https://shadcncraft.com",
-      experienceId: "shadcncraft",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-      experienceId: "quaric",
-    },
-  ],
+  address: "Asansol, West Bengal, India",
+  phoneNumber: "KzkxNzkwODgwNzAwMw==", // E.164 format, base64 encoded (+917908807003)
+  email: "YXl1c2hndXB0YWEwODZAZ21haWwuY29t", // base64 encoded
+  website: "https://ayushg.vercel.app",
+  jobTitle: "Student",
+  jobs: [],
   about: `
-- **Design Engineer** with 5+ years of experience, known for pixel-perfect execution and strong attention to small details.
-- Skilled in **Next.js**, **React**, **TypeScript**, and modern front-end technologies; building high-quality, user-centric web and mobile applications.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted personal projects.
-- Creator of [ZaDark](https://zadark.com) (2022): enhances the Zalo experience on PC & Web
-  - 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark)*
-  - 30k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob)*
-- Creator of [React Wheel Picker](https://react-wheel-picker.ayushG.com): iOS-like wheel picker with inertia scrolling & infinite loop
-  - 12k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker)*
-  - [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort
-
-<p class="text-muted-foreground">* Peak metrics recorded; actual current figures may vary.</p>
+- **B.Tech Student** in Information Technology at Asansol Engineering College (2022 - 2026).
+- Skilled in <i>JavaScript</i>, <i>TypeScript</i>, <i>React</i>, <i>Next.js</i>, and modern full-stack web technologies.
+- Passionate about building high-performance, <b>real-time applications</b> and robust backend architectures.
+- Experience with complex technologies including WebSockets, Redis, BullMQ, and PostgreSQL.
+- Always eager to learn, build, and solve challenging technical problems.
 `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?v=8",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/ayushG.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
-  keywords: [
-    "ayush",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "ayushG",
-    "chanh dai",
-    "ayushG19",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
-  ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  avatar: "./avatar.png",
+  ogImage: "./ogImage.png",
+  namePronunciationUrl: "",
+  timeZone: "Asia/Kolkata",
+  keywords: ["ayush", "ayush gupta", "ayushG", "ayushG19"],
+  dateCreated: "2025-04-17", // YYYY-MM-DD
 }

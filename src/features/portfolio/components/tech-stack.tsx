@@ -20,7 +20,7 @@ export function TechStack() {
         <ul className="flex flex-wrap gap-4 select-none">
           {TECH_STACK.map((tech) => {
             return (
-              <li key={tech.key} className="flex">
+              <li key={tech.key} className="flex items-center justify-center">
                 <Tooltip>
                   <TooltipTrigger
                     render={
@@ -33,25 +33,25 @@ export function TechStack() {
                         {tech.theme ? (
                           <>
                             <Image
-                              src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
-                              alt={`${tech.title} light icon`}
+                              src={`${tech.iconUrl}`}
+                              alt={`${tech.title} icon`}
                               width={32}
                               height={32}
-                              className="hidden [html.light_&]:block"
+                              className="dark:hidden"
                               unoptimized
                             />
                             <Image
-                              src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
+                              src={`${tech.darkIconUrl}`}
                               alt={`${tech.title} dark icon`}
                               width={32}
                               height={32}
-                              className="hidden [html.dark_&]:block"
+                              className="hidden dark:block"
                               unoptimized
                             />
                           </>
                         ) : (
                           <Image
-                            src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
+                            src={`${tech.iconUrl}`}
                             alt={`${tech.title} icon`}
                             width={32}
                             height={32}
