@@ -2,7 +2,6 @@ import dynamic from "next/dynamic"
 import Link from "next/link"
 
 import { DesktopNav } from "@/components/desktop-nav"
-import { NavItemGitHub } from "@/components/nav-item-github"
 import { SiteHeaderMark } from "@/components/site-header-mark"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Separator } from "@/components/ui/separator"

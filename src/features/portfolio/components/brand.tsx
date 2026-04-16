@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic"
 
 import { AyushMark } from "@/components/ayush-mark"
-import { AyushWordmark } from "@/components/ayush-wordmark"
 
 import { Panel, PanelHeader, PanelTitle } from "./panel"
 

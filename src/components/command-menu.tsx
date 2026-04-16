@@ -3,11 +3,8 @@
 import { useRouter } from "@bprogress/next/app"
 import { useCommandState } from "cmdk"
 import {
-  AwardIcon,
-  BookmarkIcon,
   BoxIcon,
   BriefcaseBusinessIcon,
-  CircleCheckBigIcon,
   CornerDownLeftIcon,
   DownloadIcon,
   LayersIcon,

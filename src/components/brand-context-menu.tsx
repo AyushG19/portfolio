@@ -1,14 +1,11 @@
 "use client"
 
-import { DownloadIcon, TriangleDashedIcon, TypeIcon } from "lucide-react"
-import Link from "next/link"
 import { useTheme } from "next-themes"
 import { toast } from "sonner"
 
 import { copyText } from "@/utils/copy"
 
 import { AyushMark, getMarkSVG } from "./ayush-mark"
-import { getWordmarkSVG } from "./ayush-wordmark"
 import {
   ContextMenu,
   ContextMenuContent,
